@@ -11,6 +11,11 @@ module.exports = function (wallaby) {
       loaders: [
         { test: /\.json$/, loader: 'json' }
       ]
+    },
+    externals: {
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true,
+      'react/addons': true
     }
   });
 

@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -23,6 +22,9 @@ module.exports = {
         presets: ['es2015', 'stage-0', 'react']
       }
     }]
+  },
+  externals: {
+    enzyme: 'enzyme'
   },
   resolve: {
     extensions: ['', '.js']
