@@ -1,0 +1,31 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    //jasmine
+    "jasmine/no-disabled-tests": 0,
+    "jasmine/no-spec-dupes": [
+      1,
+      "branch"
+    ],
+    "jasmine/no-suite-dupes": [
+      1,
+      "branch"
+    ],
+    "jasmine/missing-expect": 0,
+    "jasmine/no-suite-callback-args": 2,
+    "jasmine/valid-expect": 1
+  },
+  "plugins": [
+    "jasmine"
+  ],
+  "extends": "airbnb"
+}
