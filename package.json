@@ -5,7 +5,7 @@
   "description": "Test utils to simplify testing of containers in redux with enzyme.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Knegusen/redux-test-utils.git"
+    "url": "https://github.com/Knegusen/enzyme-redux.git"
   },
   "keywords": [
     "redux",
