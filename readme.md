@@ -1,4 +1,4 @@
-# redux-test-utils
+# enzyme-redux
 
 Test utils to simplify testing of containers in redux with enzyme.
 
