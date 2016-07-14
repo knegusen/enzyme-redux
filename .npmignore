@@ -4,6 +4,8 @@ src
 
 .gitignore
 
+.npmignore
+
 .idea
 
 karma-conf.js
