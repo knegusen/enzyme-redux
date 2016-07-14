@@ -18,9 +18,6 @@ describe('redux-enzyme', () => {
     });
 
     it('passes prop from mapDispatchToProps', () => {
-      const state = {
-        field1: 'field1',
-      };
       const action = {
         type: 'type',
       };
@@ -29,7 +26,7 @@ describe('redux-enzyme', () => {
           dispatch(action);
         },
       });
-      const store = createMockStore(state);
+      const store = createMockStore();
 
       const ConnectedComponent = connect(undefined, mapDispatchToProps)(ReactComponent);
       const component = shallowWithStore(<ConnectedComponent />, store);
