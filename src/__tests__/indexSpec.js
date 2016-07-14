@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { shallowWithStore } from '../index';
+import { shallowWithStore, shallowWithState } from '../index';
 import { createMockStore } from 'redux-test-utils';
 
 describe('redux-enzyme', () => {
-  describe('shallowWithStore', () => {
-    const ReactComponent = () => (<div>dummy component</div>);
+  const ReactComponent = () => (<div>dummy component</div>);
 
+  describe('shallowWithStore', () => {
     it('passes prop from mapStateToProps', () => {
       const expectedState = 'expectedState';
       const mapStateToProps = (state) => ({
@@ -35,6 +35,18 @@ describe('redux-enzyme', () => {
       const component = shallowWithStore(<ConnectedComponent />, store);
       component.props().dispatchProp();
       expect(store.isActionDispatched(action)).toBe(true);
+    });
+  });
+
+  describe('shallowWithState', () => {
+    it('returns correct state', () => {
+      const expectedState = 'expectedState';
+      const mapStateToProps = (state) => ({
+        state,
+      });
+      const ConnectedComponent = connect(mapStateToProps)(ReactComponent);
+      const component = shallowWithState(<ConnectedComponent />, expectedState);
+      expect(component.props().state).toBe(expectedState);
     });
   });
 });
