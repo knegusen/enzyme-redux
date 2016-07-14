@@ -16,6 +16,8 @@ $ npm install enzyme-redux --save-dev
 
 ```js
 
+import React from 'react';
+import { connect } from 'react-redux';
 import { shallowWithStore } from 'enzyme-redux';
 import { createMockStore } from 'redux-test-utils';
 
@@ -59,9 +61,12 @@ describe('example shallowWithStore', () => {
 
 ```js
 
+import React from 'react';
+import { connect } from 'react-redux';
 import { shallowWithState } from 'enzyme-redux';
 
 describe('example shallowWithState', () => {
+  const ReactComponent = () => (<div>dummy component</div>);
   it('works', () => {
     const expectedState = 'expectedState';
     const mapStateToProps = (state) => ({
