@@ -1,6 +1,6 @@
 {
   "name": "enzyme-redux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "description": "Test utils to simplify testing of containers in redux with enzyme.",
   "repository": {
