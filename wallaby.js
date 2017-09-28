@@ -1,51 +1,12 @@
-var path = require('path');
-var wallabyWebpack = require('wallaby-webpack');
-
-module.exports = function (wallaby) {
-
-  var webpackPostprocessor = wallabyWebpack({
-    resolve: {
-      extensions: ['', '.js', '.json']
-    },
-    module: {
-      loaders: [
-        { test: /\.json$/, loader: 'json' }
-      ]
-    },
-    externals: {
-      'react/lib/ExecutionEnvironment': true,
-      'react/lib/ReactContext': true,
-      'react/addons': true
-    }
-  });
-
-  var babelCompiler = wallaby.compilers.babel({
-    babel: require('babel-core'),
-    presets: ['es2015', 'stage-0', 'react']
-  });
-
-  return {
-    files: [
-      { pattern: 'node_modules/phantomjs-polyfill/bind-polyfill.js', instrument: false },
-      { pattern: 'src/**/*.js*', load: false },
-      { pattern: 'src/**/__tests__/**/*Spec.js*', ignore: true }
-    ],
-
-    tests: [
-      { pattern: 'src/**/__tests__/**/*Spec.js*', load: false }
-    ],
-
-    compilers: {
-      '**/*.js*': babelCompiler
-    },
-
-    postprocessor: webpackPostprocessor,
-
-    bootstrap: function () {
-      window.__moduleBundler.loadTests();
-    }
-  };
-};
-
-
-
+module.exports = wallaby => ({
+  files: ['src/**/*.js*', '!src/**/__tests__/*.js*'],
+  tests: ['src/**/__tests__/*.js*'],
+  compilers: {
+    'src/**/*.js*': wallaby.compilers.babel(),
+  },
+  env: {
+    type: 'node',
+    runner: 'node',
+  },
+  testFramework: 'jest',
+});

@@ -8,10 +8,4 @@ src
 
 .idea
 
-karma-conf.js
-karma-files.js
-
 wallaby.js
-
-webpack.config.karma.js
-webpack.config.prod.js

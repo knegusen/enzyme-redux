@@ -1,15 +1,16 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { connect } from 'react-redux';
-import { shallowWithStore, shallowWithState } from '../index';
 import { createMockStore } from 'redux-test-utils';
+import { shallowWithState, shallowWithStore } from '../index';
 
 describe('redux-enzyme', () => {
-  const ReactComponent = () => (<div>dummy component</div>);
+  const ReactComponent = () => <div>dummy component</div>;
 
   describe('shallowWithStore', () => {
     it('passes prop from mapStateToProps', () => {
       const expectedState = 'expectedState';
-      const mapStateToProps = (state) => ({
+      const mapStateToProps = state => ({
         state,
       });
       const ConnectedComponent = connect(mapStateToProps)(ReactComponent);
@@ -21,7 +22,7 @@ describe('redux-enzyme', () => {
       const action = {
         type: 'type',
       };
-      const mapDispatchToProps = (dispatch) => ({
+      const mapDispatchToProps = dispatch => ({
         dispatchProp() {
           dispatch(action);
         },
@@ -38,7 +39,7 @@ describe('redux-enzyme', () => {
   describe('shallowWithState', () => {
     it('returns correct state', () => {
       const expectedState = 'expectedState';
-      const mapStateToProps = (state) => ({
+      const mapStateToProps = state => ({
         state,
       });
       const ConnectedComponent = connect(mapStateToProps)(ReactComponent);
