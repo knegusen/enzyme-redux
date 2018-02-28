@@ -49,6 +49,7 @@
     "build": "npm run clean && babel src --out-dir dist --ignore **/__tests__/**",
     "publish": "npm run build",
     "prepublish": "npm run test",
+    "preinstall": "npm run build",
     "lint": "eslint --ext .jsx,.js src",
     "lint-fix": "eslint --ext .jsx,.js src --fix",
     "test": "npm run lint && jest"
