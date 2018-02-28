@@ -1,10 +1,17 @@
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 export const shallowWithStore = (Component, store) => {
   const context = {
     store,
   };
   return shallow(Component, { context });
+};
+
+export const mountWithStore = (Component, store) => {
+  const context = {
+    store,
+  };
+  return mount(Component, { context });
 };
 
 export const shallowWithState = (Component, state) => {
