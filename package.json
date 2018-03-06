@@ -41,8 +41,8 @@
     "rimraf": "^2.5.3"
   },
   "peerDependencies": {
-    "enzyme": "^2 || ^3",
-    "react": "^15 || ^16"
+    "enzyme": "^3.0.0",
+    "react": "^16.0.0"
   },
   "scripts": {
     "clean": "rimraf lib",
