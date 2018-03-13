@@ -24,3 +24,14 @@ export const shallowWithState = (Component, state) => {
   };
   return shallow(Component, { context });
 };
+
+export const mountWithState = (Component, state) => {
+  const context = {
+    store: {
+      getState: () => state,
+      subscribe: () => ({}),
+      dispatch: () => ({}),
+    },
+  };
+  return mount(Component, { context });
+};
