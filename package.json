@@ -16,6 +16,9 @@
     "store",
     "test"
   ],
+  "engines": {
+    "node": ">=6"
+  },
   "author": "Dennis Axelsson <knegusen@gmail.com>",
   "devDependencies": {
     "babel-cli": "^6.26.0",

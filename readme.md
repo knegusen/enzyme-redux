@@ -1,4 +1,4 @@
-# enzyme-redux
+# enzyme-redux [![Build Status](https://travis-ci.org/knegusen/enzyme-redux.svg?branch=master)](https://travis-ci.org/knegusen/enzyme-redux)
 
 Test utils to simplify testing of containers in redux with enzyme.
 
